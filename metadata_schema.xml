@@ -7,38 +7,37 @@
 		<Schema Namespace="MyDBSchema" xmlns="http://schemas.microsoft.com/ado/2006/04/edm"
 				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="http://schemas.microsoft.com/ado/2006/04/edm ">
-			<EntityContainer Name="AllOpportunities" m:IsDefaultEntityContainer="true">
-				<EntitySet Name="opportunities" EntityType="MyDBSchema.Opportunity"/>
-				<EntitySet Name="products" EntityType="MyDBSchema.Product"/>
+			<EntityContainer Name="AllFares" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="fares" EntityType="MyDBSchema.Fares"/>
 			</EntityContainer>
-			<EntityType Name="Opportunity">
+			<EntityType Name="Fare">
 				<Key>
 					<PropertyRef Name="name"/>
 				</Key>
-				<Property Name="name" Type="Edm.String" Nullable="false" MaxLength="256"
+				<Property Name="id" Type="Edm.String" Nullable="false" MaxLength="256"
 					Unicode="true" FixedLength="false"/>
-				<Property Name="description" Type="Edm.String" Nullable="true" MaxLength="256"
+				<Property Name="mapidfrom" Type="Edm.String" Nullable="true" MaxLength="256"
 					Unicode="true" FixedLength="false"/>
-				<Property Name="type" Type="Edm.String" Nullable="true" MaxLength="256"
+				<Property Name="duration" Type="Edm.String" Nullable="true" MaxLength="256"
 					Unicode="true" FixedLength="false"/>
-				<Property Name="leadsource" Type="Edm.String" Nullable="true" MaxLength="256"
+				<Property Name="return_daration" Type="Edm.String" Nullable="true" MaxLength="256"
 					Unicode="true" FixedLength="false"/>
-				<Property Name="accountid" Type="Edm.String" Nullable="false" MaxLength="256"
+				<Property Name="flyto" Type="Edm.String" Nullable="true" MaxLength="256"
 					Unicode="true" FixedLength="false"/>
-				<Property Name="amount" Type="Edm.Double" Nullable="false"
+				<Property Name="conversion" Type="Edm.Double" Nullable="true"
 					Precision="3"/>
-				<Property Name="closedate" Type="Edm.DateTime" Nullable="false"
+				<Property Name="deep_link" Type="Edm.DateTime" Nullable="true"
 					Precision="3"/>
-				<Property Name="stagename" Type="Edm.String" Nullable="false"
+				<Property Name="mapidto" Type="Edm.String" Nullable="true"
 					Unicode="true" Maxlength="50"/>
 			</EntityType>
-			<EntityType Name="Product">
+			<EntityType Name="fare">
 				<Key>
 					<PropertyRef Name="id"/>
 				</Key>
 				<Property Name="id" Type="Edm.Int32" Nullable="false"
 					/>
-				<Property Name="name" Type="Edm.String" Nullable="false" MaxLength="20"
+				<Property Name="mapidfrom" Type="Edm.String" Nullable="false" MaxLength="20"
 					Unicode="true" FixedLength="false"/>
 				<Property Name="price" Type="Edm.Double" Nullable="false"
 					Precision="3"/>
